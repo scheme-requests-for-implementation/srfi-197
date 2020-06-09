@@ -20,6 +20,13 @@
 <p>Threading Macros</p>
 <h2 id="author">Author</h2>
 <p>Adam Nelson</p>
+<h2 id="status">Status</h2>
+<p>This SRFI is currently in <em>draft</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+197+at+srfi+dotschemers+dot+org">srfi-197@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-197">archive</a>.</p>
+<ul>
+  <li>Received: 2020-06-07</li>
+  <li>60-day deadline: 2020-08-07</li>
+  <li>Draft #1 published: 2020-06-08</li>
+</ul>
 <h2 id="abstract">Abstract</h2>
 <p>Threading macros provide a simple, readable way to write deeply-nested expressions. Also known as "arrows", these macros were first introduced in Clojure, and are a key feature of that language. With threading macros, expressions like <code>(append (cons (assoc x y) c) '(a b))</code> can be written as a sequence of operations: <code>(-&gt; x (assoc y) (cons c) (append '(a b))</code>.</p>
 <h1 id="issues">Issues</h1>
