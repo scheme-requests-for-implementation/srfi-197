@@ -28,13 +28,13 @@
   <li>Draft #1 published: 2020-06-08</li>
 </ul>
 <h2 id="abstract">Abstract</h2>
-<p>Threading macros provide a simple, readable way to write deeply-nested expressions. Also known as "arrows", these macros were first introduced in Clojure, and are a key feature of that language. With threading macros, expressions like <code>(append (cons (assoc x y) c) '(a b))</code> can be written as a sequence of operations: <code>(-&gt; x (assoc y) (cons c) (append '(a b))</code>.</p>
 <h1 id="issues">Issues</h1>
+<p>Threading macros provide a simple, readable way to write deeply nested expressions. Also known as "arrows", these macros were first introduced in Clojure, and are a key feature of that language. With threading macros, expressions like <code>(append (cons (assoc x y) c) '(a b))</code> can be written as a sequence of operations: <code>(-&gt; x (assoc y) (cons c) (append '(a b))</code>.</p>
 <p>These are called "Threading macros" in Clojure, but is there a clearer name to use in Scheme? It needs to be clear that these have nothing to do with threads of execution.</p>
 <h1 id="rationale">Rationale</h1>
-<p>Deeply-nested expressions are a common problem in all functional languages, especially Lisps. Excessive nesting can result in deep indentation and parenthesis matching errors.</p>
 <div class="copy-wrapper"><div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div><pre><code>; Quick, how many close parentheses are there? 
 (eta (zeta (epsilon (delta (gamma (beta (alpha))))))) 
+<p>Deeply nested expressions are a common problem in all functional languages, especially Lisps. Excessive nesting can result in deep indentation and parenthesis matching errors.</p>
 </code></pre></div>
 <p>Additionally, some expressions sound more natural when written inside-out, as a sequence of steps from start to finish.</p>
 <div class="copy-wrapper"><div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div><pre><code>; This recipe looks… backwards.
