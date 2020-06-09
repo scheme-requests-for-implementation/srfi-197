@@ -32,13 +32,13 @@
 <p>Threading macros provide a simple, readable way to write deeply nested expressions. Also known as "arrows", these macros were first introduced in Clojure, and are a key feature of that language. With threading macros, expressions like <code>(append (cons (assoc x y) c) '(a b))</code> can be written as a sequence of operations: <code>(-&gt; x (assoc y) (cons c) (append '(a b))</code>.</p>
 <p>These are called "Threading macros" in Clojure, but is there a clearer name to use in Scheme? It needs to be clear that these have nothing to do with threads of execution.</p>
 <h1 id="rationale">Rationale</h1>
-<div class="copy-wrapper"><div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div><pre><code>; Quick, how many close parentheses are there? 
-(eta (zeta (epsilon (delta (gamma (beta (alpha))))))) 
 <p>Deeply nested expressions are a common problem in all functional languages, especially Lisps. Excessive nesting can result in deep indentation and parenthesis matching errors.</p>
+<div class="copy-wrapper"><div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div><pre><code>; Quick, how many close parentheses are there?
+(eta (zeta (epsilon (delta (gamma (beta (alpha)))))))
 </code></pre></div>
 <p>Additionally, some expressions sound more natural when written inside-out, as a sequence of steps from start to finish.</p>
 <div class="copy-wrapper"><div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div><pre><code>; This recipe looks… backwards.
-(bake (pour (mix (add (add (add bowl flour) sugar) eggs))) (fahrenheit 350)) 
+(bake (pour (mix (add (add (add bowl flour) sugar) eggs))) (fahrenheit 350))
 </code></pre></div>
 <p>Many functional languages solve this by introducing function chaining operators (sometimes called "pipeline" operators). Threading macros are a kind of pipeline operator introduced by the Clojure language, but they are trivially portable to any Lisp.</p>
 <div class="copy-wrapper"><div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div><pre><code>(-&gt; (alpha) beta gamma delta epsilon zeta eta)
@@ -113,6 +113,6 @@
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 
             </div>
-          
-        
+
+
       </body></html>
