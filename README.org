@@ -1,4 +1,4 @@
-* SRFI 197: Threading Macros
+* SRFI 197: Expression Chaining Operators
 
 ** by Adam Nelson
 
@@ -6,7 +6,7 @@
 
 keywords: [[https://srfi.schemers.org/?keywords=syntax][Syntax]]
 
-This repository hosts [[https://srfi.schemers.org/srfi-197/][SRFI 197]]: Threading Macros, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
+This repository hosts [[https://srfi.schemers.org/srfi-197/][SRFI 197]]: Expression Chaining Operators, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
 This SRFI is in /draft/ status.
 
