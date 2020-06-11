@@ -46,7 +46,7 @@
 </code></pre></div>
 <p>Expression chaining is especially useful for nested list and vector operations, in which it is often difficult to match the last argument (the list or vector) to the correct procedure call because they may be separated by a multi-line lambda.</p>
 <div class="copy-wrapper"><div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div><pre><code>(chain xs
-       (map (lambda (x) (+ x 1))
+       (map (lambda (x) (+ x 1)))
        (filter odd?)
        (fold * 1))
 </code></pre></div>
