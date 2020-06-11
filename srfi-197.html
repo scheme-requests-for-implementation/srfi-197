@@ -23,9 +23,9 @@
   <li>Draft #2 published: 2020-06-11</li>
 </ul>
 <h2 id="abstract">Abstract</h2>
-<p>Many functional languages provide chaining or pipeline operators, like Clojure's <code>-&gt;</code> or OCaml's <code>|&gt;</code>. Chaining is a simple, terse, and readable way to write deeply-nested expressions. This SRFI defines a family of <code>chain</code> operators, which can rewrite nested expressions like <code>(a b (c d (e f g)))</code> as a sequence of operations: <code>(chain g (e f) (c d) (a b))</code>.</p>
+<p>Many functional languages provide chaining or pipeline operators, like Clojure's <code>-&gt;</code> or OCaml's <code>|&gt;</code>. Chaining is a simple, terse, and readable way to write deeply nested expressions. This SRFI defines a family of <code>chain</code> operators, which can rewrite nested expressions like <code>(a b (c d (e f g)))</code> as a sequence of operations: <code>(chain g (e f) (c d) (a b))</code>.</p>
 <h1 id="rationale">Rationale</h1>
-<p>Deeply-nested expressions are a common problem in all functional languages, especially Lisps. Excessive nesting can result in deep indentation and parenthesis matching errors.</p>
+<p>Deeply nested expressions are a common problem in all functional languages, especially Lisps. Excessive nesting can result in deep indentation and parenthesis-matching errors.</p>
 <div class="copy-wrapper"><div class="copy" title="Copy Code to Clipboard"><i class="icon small">content_copy</i></div><pre><code>; Quick, how many close parentheses are there?
 (eta (zeta (epsilon (delta (gamma (beta (alpha)))))))
 </code></pre></div>
