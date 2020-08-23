@@ -1,4 +1,4 @@
-* SRFI 197: Expression Chaining Operators
+* SRFI 197: Pipeline Operators
 
 ** by Adam Nelson
 
