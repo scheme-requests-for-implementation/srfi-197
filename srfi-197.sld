@@ -1,8 +1,5 @@
 (define-library (srfi-197)
-  (export -> ->> as->
-          some-> some->>
-          cond-> cond->>
-          lambda-> lambda->>)
+  (export chain chain-and chain-when chain-lambda nest nest-reverse)
 
   (import (scheme base))
 
