@@ -20,7 +20,7 @@
   <li>60-day deadline: 2020-08-07</li>
   <li>Draft #1 published: 2020-06-08</li>
   <li>Draft #2 published: 2020-06-10</li>
-  <li>Draft #3 published: 2020-08-22</li>
+  <li>Draft #3 published: 2020-08-23</li>
 </ul>
 <h2 id="abstract">Abstract</h2>
 <p>Many functional languages provide pipeline operators, like Clojure's <code>-&gt;</code> or OCaml's <code>|&gt;</code>. Pipelines are a simple, terse, and readable way to write deeply-nested expressions. This SRFI defines a family of <code>chain</code> and <code>nest</code> pipeline operators, which can rewrite nested expressions like <code>(a b (c d (e f g)))</code> as a sequence of operations: <code>(chain g (e f _) (c d _) (a b _))</code>.</p>
@@ -74,7 +74,7 @@
 <p>Also supports a custom placeholder symbol, as its second argument.</p>
 <div class="copy-wrapper"><pre><code class="language-scheme" data-code="KG5lc3QtcmV2ZXJzZSBlIDw+IChjIGQgPD4pIChhIGIgPD4pKSA7ID0+IChhIGIgKGMgZCBlKSk="><span><span class="mtk1">(nest-reverse&nbsp;e&nbsp;&lt;&gt;&nbsp;(c&nbsp;d&nbsp;&lt;&gt;)&nbsp;(a&nbsp;b&nbsp;&lt;&gt;))&nbsp;</span><span class="mtk4">;&nbsp;=&gt;&nbsp;(a&nbsp;b&nbsp;(c&nbsp;d&nbsp;e))</span></span><br></code></pre></div>
 <h2 id="implementation">Implementation</h2>
-<p><a target="_blank" href="https://github.com/ar-nelson/srfi-197/tree/draft-3">A sample implementation is available on GitHub.</a> This repository contains two portable SRFI 197 implementations, one in R7RS-small and <code>syntax-rules</code>, the other in R6RS and <code>syntax-case</code>. The only dependency of either implementation is SRFI 2. It includes an R7RS library wrapper and a test script.</p>
+<p><a target="_blank" href="https://github.com/scheme-requests-for-implementation/srfi-197">A sample implementation is available on GitHub.</a> This repository contains two portable SRFI 197 implementations, one in R7RS-small and <code>syntax-rules</code>, the other in R6RS and <code>syntax-case</code>. The only dependency of either implementation is SRFI 2. It includes an R7RS library wrapper and a test script.</p>
 <h2 id="acknowledgements">Acknowledgements</h2>
 <p>Thanks to the participants in the SRFI 197 mailing list who helped me refine this SRFI, including Marc Nieper-Wißkirchen, Linus Björnstam, Shiro Kawai, Lassi Kortela, and John Cowan.</p>
 <p>Thanks to Rich Hickey for Clojure and the original implementation of Clojure threading macros, and to Paulus Esterhazy for the (EPL licensed) <a target="_blank" href="https://clojure.org/guides/threading_macros">threading macros documentation page</a>, which was a source of inspiration and some of the examples in this document.</p>
