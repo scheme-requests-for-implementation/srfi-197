@@ -11,22 +11,22 @@
               <h1 id="srfi-197-pipeline-operators"><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI logo" /></a>197: Pipeline Operators</h1>
 <p id="author">by Adam Nelson</p>
 <h2 id="status">Status</h2>
-<p>This SRFI is currently in <em>draft</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+197+at+srfi+dotschemers+dot+org">srfi-197@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-197">archive</a>.</p>
+<p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+197+at+srfi+dotschemers+dot+org">srfi-197@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-197">archive</a>.</p>
 <ul>
   <li>Received: 2020-06-07</li>
-  <li>60-day deadline: 2020-08-07</li>
   <li>Draft #1 published: 2020-06-08</li>
   <li>Draft #2 published: 2020-06-10</li>
   <li>Draft #3 published: 2020-08-23</li>
   <li>Draft #4 published: 2020-08-31</li>
   <li>Draft #5 published: 2020-09-06</li>
+  <li>Finalized: 2020-10-12</li>
 </ul>
 <h2 id="abstract">Abstract</h2>
 <p>Many functional languages provide pipeline operators, like Clojure's <code>-&gt;</code> or OCaml's <code>|&gt;</code>. Pipelines are a simple, terse, and readable way to write deeply-nested expressions. This SRFI defines a family of <code>chain</code> and <code>nest</code> pipeline operators, which can rewrite nested expressions like <code>(a b (c d (e f g)))</code> as a sequence of operations: <code>(chain g (e f _) (c d _) (a b _))</code>.</p>
 <h1 id="rationale">Rationale</h1>
-<p>Deeply-nested expressions are a common problem in all functional languages, especially Lisps. Excessive nesting can result in deep indentation and parenthesis matching errors.</p>
+<p>Deeply-nested expressions are a common problem in all functional languages, especially Lisps. Excessive nesting can result in deep indentation and parenthesis-matching errors.</p>
 <div class="copy-wrapper"><pre><code class="language-scheme"><span><span class="mtk4">;&nbsp;Quick,&nbsp;how&nbsp;many&nbsp;close&nbsp;parentheses&nbsp;are&nbsp;there?&nbsp;</span></span><br><span><span class="mtk1">(eta&nbsp;(zeta&nbsp;(epsilon&nbsp;(delta&nbsp;(gamma&nbsp;(beta&nbsp;(alpha))))</span><span class="mtk1">)))&nbsp;</span></span><br></code></pre></div>
-<p>Additionally, some expressions sound more natural when written inside-out, as a sequence of steps from start to finish.</p>
+<p>Additionally, some expressions sound more natural when written inside out, as a sequence of steps from start to finish.</p>
 <div class="copy-wrapper"><pre><code class="language-scheme"><span><span class="mtk4">;&nbsp;This&nbsp;recipe&nbsp;looks…&nbsp;backwards.</span></span><br><span><span class="mtk1">(bake&nbsp;(pour&nbsp;(mix&nbsp;(add&nbsp;eggs&nbsp;(add&nbsp;sugar&nbsp;(add&nbsp;flour&nbsp;b</span><span class="mtk1">owl)))))&nbsp;(fahrenheit&nbsp;</span><span class="mtk21">350</span><span class="mtk1">))</span></span><br></code></pre></div>
 <p>Many functional languages solve this by introducing pipeline operators. This SRFI defines a <code>chain</code> operator inspired by <a target="_blank" href="https://clojure.org/guides/threading_macros">Clojure's threading macros</a>, but with <code>_</code> as an argument placeholder, a notation also used in <a target="_blank" href="https://srfi.schemers.org/srfi-156/srfi-156.html">SRFI 156</a>.</p>
 <div class="copy-wrapper"><pre><code class="language-scheme"><span><span class="mtk1">(chain&nbsp;(alpha)&nbsp;(beta&nbsp;_)&nbsp;(gamma&nbsp;_)&nbsp;(delta&nbsp;_)&nbsp;(epsil</span><span class="mtk1">on&nbsp;_)&nbsp;(zeta&nbsp;_)&nbsp;(eta&nbsp;_))</span></span><br><span><span>&nbsp;</span></span><br><span><span class="mtk1">(chain&nbsp;bowl</span></span><br><span><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(add&nbsp;flour&nbsp;_)</span></span><br><span><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(add&nbsp;sugar&nbsp;_)</span></span><br><span><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(add&nbsp;eggs&nbsp;_)</span></span><br><span><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(mix&nbsp;_)</span></span><br><span><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(pour&nbsp;_)</span></span><br><span><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(bake&nbsp;_&nbsp;(fahrenheit&nbsp;</span><span class="mtk21">350</span><span class="mtk1">)))</span></span><br></code></pre></div>
