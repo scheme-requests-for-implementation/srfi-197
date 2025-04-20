@@ -1,3 +1,7 @@
+;;; SPDX-FileCopyrightText: 2020 Adam R. Nelson <adam@nels.onl>
+;;;
+;;; SPDX-License-Identifier: MIT
+
 (import (rnrs base)
         (rnrs io ports)
         (rnrs syntax-case))

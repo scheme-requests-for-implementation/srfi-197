@@ -1,3 +1,6 @@
+;;; SPDX-FileCopyrightText: 2020 Adam R. Nelson <adam@nels.onl>
+;;;
+;;; SPDX-License-Identifier: MIT
 
 (define-syntax chain
   (syntax-rules …₁ ()

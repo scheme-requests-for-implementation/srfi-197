@@ -1,3 +1,7 @@
+;;; SPDX-FileCopyrightText: 2020 Adam R. Nelson <adam@nels.onl>
+;;;
+;;; SPDX-License-Identifier: MIT
+
 ; A syntax-case implementation of SRFI 197.
 ; This should be functionally equivalent to srfi-197.scm,
 ; but it may be easier to read and understand.

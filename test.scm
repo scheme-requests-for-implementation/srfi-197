@@ -1,3 +1,7 @@
+;;; SPDX-FileCopyrightText: 2020 Adam R. Nelson <adam@nels.onl>
+;;;
+;;; SPDX-License-Identifier: MIT
+
 (include "./srfi-64-minimal.scm")
 
 (define (exclamation x) (string-append x "!"))
