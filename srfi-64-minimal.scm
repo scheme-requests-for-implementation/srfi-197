@@ -1,3 +1,7 @@
+;;; SPDX-FileCopyrightText: 2020 Adam R. Nelson <adam@nels.onl>
+;;;
+;;; SPDX-License-Identifier: MIT
+
 ; Just enough of SRFI 64 (unit tests) to run test.scm.
 
 (define *test-failures* '())

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2020 Adam R. Nelson <adam@nels.onl>
+
+SPDX-License-Identifier: MIT
+-->
+
 # SRFI 197: Pipeline Operators
 
 A Scheme library that implements `chain`, an operator based on [Clojure
