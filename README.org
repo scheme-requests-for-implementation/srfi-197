@@ -1,7 +1,6 @@
-# SPDX-FileCopyrightText: 2020 Arthur A. Gleckler <srfi@speechcode.com>
-#
-# SPDX-License-Identifier: MIT
 
+# SPDX-FileCopyrightText: 2025 Arthur A. Gleckler
+# SPDX-License-Identifier: MIT
 * SRFI 197: Pipeline Operators
 
 ** by Adam Nelson
@@ -19,6 +18,5 @@ The full documentation for this SRFI can be found in the [[https://srfi.schemers
 If you'd like to participate in the discussion of this SRFI, or report issues with it, please [[https://srfi.schemers.org/srfi-197/][join the SRFI-197 mailing list]] and send your message there.
 
 Thank you.
-
 
 [[mailto:srfi-editors@srfi.schemers.org][The SRFI Editors]]
