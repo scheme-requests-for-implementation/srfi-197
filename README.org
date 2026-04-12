@@ -1,5 +1,5 @@
 
-# SPDX-FileCopyrightText: 2025 Arthur A. Gleckler
+# SPDX-FileCopyrightText: 2026 Arthur A. Gleckler
 # SPDX-License-Identifier: MIT
 * SRFI 197: Pipeline Operators
 
